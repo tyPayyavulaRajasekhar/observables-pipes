@@ -1,0 +1,20 @@
+<button (click)="onAddUser()" class="btn btn-primary">Add User</button>
+<div class="col-md-4 offset-md-4 mt-3 mb-3">
+  <input type="search" [(ngModel)]="search" class="form-control">
+</div>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Sl.No</th>
+      <th>Name</th>
+      <th>Degree</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users | filter : search; index as i;">
+      <td>{{ i + 1 }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.degree }}</td>
+    </tr>
+  </tbody>
+</table>
